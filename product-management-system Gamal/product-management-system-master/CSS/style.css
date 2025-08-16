@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f9f9f9;
+  color: #1f1f1f;
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+#container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 1rem;
+}
+
+#head {
+  text-align: center;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+#toggleThemeBTN {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.1rem;
+  background-color: #0d6efd;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark #toggleThemeBTN {
+  background-color: #3a3a3a;
+}
+
+#scrollUpBTN {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background-color: #0d6efd;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+#scrollUpBTN.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+input {
+  width: 100%;
+  height: 35px;
+  margin: 5px 0;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  color: #111;
+  transition: 0.3s;
+}
+
+body.dark input {
+  background-color: #1e1e1e;
+  color: #eee;
+  border-color: #444;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0d6efd;
+  transform: scale(1.02);
+}
+
+.price input {
+  width: 19%;
+  display: inline-block;
+  margin-right: 1%;
+}
+
+#total {
+  background-color: #a00d02;
+  color: white;
+  padding: 5px;
+  border-radius: 6px;
+  margin-top: 5px;
+  display: inline-block;
+  min-width: 100px;
+  text-align: center;
+}
+#total::before {
+  content: "Total: ";
+}
+
+button {
+  background-color: #390053;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.3s, letter-spacing 0.2s;
+}
+
+button:hover {
+  background-color: #51025f;
+  letter-spacing: 1px;
+}
+
+.btnSearch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btnSearch button {
+  flex: 1;
+}
+
+#deleteAll {
+  margin: 20px 0;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #0d6efd;
+  color: white;
+}
+
+body.dark thead {
+  background-color: #2c2c2c;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+body.dark td, body.dark th {
+  border-color: #444;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+body.dark tbody tr:nth-child(even) {
+  background-color: #1a1a1a;
+}
+
+#create {
+  display: block;
+  width: 50%;
+  margin: 20px auto;
+  height: 45px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #0d6efd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+#create:hover {
+  background-color: #084dcb;
+  letter-spacing: 1px;
+}
+
+body.dark #create {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark #create:hover {
+  background-color: #555;
+}
+
+@media (max-width: 768px) {
+  #container {
+    width: 95%;
+    padding: 0.5rem;
+  }
+
+  .price input {
+    width: 48%;
+    margin-bottom: 5px;
+  }
+
+  .btnSearch {
+    flex-direction: column;
+  }
+
+  .btnSearch button {
+    width: 100%;
+  }
+
+  table, thead, tbody, th, td, tr {
+    font-size: 0.85rem;
+  }
+
+  #toggleThemeBTN, #scrollUpBTN {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}

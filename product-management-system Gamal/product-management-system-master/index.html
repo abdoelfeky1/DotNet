@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Product Management System</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <button id="toggleThemeBTN">🌙</button>
+
+      <div id="head">
+        <h2>CRUD</h2>
+        <p>Product Management System</p>
+      </div>
+
+      <div id="inputs">
+        <input placeholder="title" type="text" id="title" />
+        <div class="price">
+          <input onkeyup="getTotalPrice()" placeholder="price" type="number" id="price" />
+          <input onkeyup="getTotalPrice()" placeholder="taxes" type="number" id="taxes" />
+          <input onkeyup="getTotalPrice()" placeholder="ads" type="number" id="ads" />
+          <input onkeyup="getTotalPrice()" placeholder="discount" type="number" id="discount" />
+          <small id="total"></small>
+        </div>
+        <input placeholder="count" type="number" id="count" />
+        <input placeholder="category" type="text" id="category" />
+        <button id="create">➕ Create</button>
+      </div>
+
+      <div id="output">
+        <input onkeyup="searchData(this.value)" placeholder="search" type="text" id="search" />
+        <div class="btnSearch">
+          <button onclick="getsearchMode(this.id)" id="searchTitle">Search By Title</button>
+          <button onclick="getsearchMode(this.id)" id="searchCategory">Search By Category</button>
+        </div>
+        <div id="deleteAll"></div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Price</th>
+              <th>Taxes</th>
+              <th>Ads</th>
+              <th>Discount</th>
+              <th>Total</th>
+              <th>Category</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <button id="scrollUpBTN">↑</button>
+
+    <script src="Script/main.js"></script>
+  </body>
+</html>
